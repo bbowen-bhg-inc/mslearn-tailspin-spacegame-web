@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/bbowen0209/Space%20Game%20Pipeline%20Tutorial/_apis/build/status/bbowen-bhg-inc.mslearn-tailspin-spacegame-web?branchName=master)](https://dev.azure.com/bbowen0209/Space%20Game%20Pipeline%20Tutorial/_build/latest?definitionId=1&branchName=master)
 
 # Contributing
 
