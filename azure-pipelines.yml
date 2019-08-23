@@ -7,6 +7,9 @@ variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '2.1.505'
+  projectKey: 'bbowen-space-web-game'
+  projectName: 'bbowen-space-web-game'
+  organization: 'bbowen0209'
 
 steps:
 - task: DotNetCoreInstaller@0
