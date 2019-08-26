@@ -18,6 +18,10 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
+- task: NuGetToolInstaller@0
+  inputs:
+    versionSpec: '4.7.1' 
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
@@ -58,6 +62,13 @@ steps:
     eq(variables['System.PullRequest.TargetBranch'], 'master')
     )
 
+- task: NuGetCommand@2
+  displayName: 'Restore project dependencies'
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: 'Tailspin.SpaceGame.Web.Models'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
