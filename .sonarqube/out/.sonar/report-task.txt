@@ -1,0 +1,7 @@
+organization=bbowen0209
+projectKey=bbowen-space-web-game
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.381
+dashboardUrl=https://sonarcloud.io/dashboard?id=bbowen-space-web-game
+ceTaskId=AWzAP-K44VipiJEzS9ZH
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWzAP-K44VipiJEzS9ZH
