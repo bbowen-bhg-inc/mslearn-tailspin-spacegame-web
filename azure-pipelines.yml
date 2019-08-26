@@ -11,6 +11,7 @@ variables:
   projectName: 'bbowen-space-web-game'
   organization: 'bbowen0209'
 
+
 steps:
 - task: DotNetCoreInstaller@0
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
@@ -79,6 +80,7 @@ steps:
     publishTestResults: true
     projects: '**/*.Tests.csproj'
 
+
 - script: |
     reportgenerator -reports:$(Build.SourcesDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:HtmlInline_AzurePipelines
   displayName: 'Create code coverage report'
@@ -103,6 +105,7 @@ steps:
         eq(variables['System.PullRequest.TargetBranch'],'master')
     )
 
+
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
   inputs:
@@ -120,4 +123,17 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+
   condition: succeeded()
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Debug'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Release'
+
+
+
+
